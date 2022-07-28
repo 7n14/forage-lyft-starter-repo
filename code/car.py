@@ -1,5 +1,3 @@
-from abc import  abstractmethod
-
 from Serviceable import serviceable
 
 class Car(serviceable):

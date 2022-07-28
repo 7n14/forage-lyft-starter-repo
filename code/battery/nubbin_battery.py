@@ -1,5 +1,4 @@
 import datetime
-
 from battery.battery import battery
 
 class nubbin_battery (battery):

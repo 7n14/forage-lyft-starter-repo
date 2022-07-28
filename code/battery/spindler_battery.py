@@ -1,5 +1,4 @@
-from datetime import date, datetime
-
+import datetime
 from battery.battery import battery
 
 class spindler_battery (battery):
