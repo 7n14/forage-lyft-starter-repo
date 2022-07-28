@@ -1,8 +1,6 @@
-
-
-from xmlrpc.client import boolean
-
+from abc import abstractmethod
 
 class serviceable():
+    @abstractmethod
     def needs_service(self):
-        return boolean
+        pass

@@ -1,8 +1,4 @@
-
-
-
 from engine.engine import engine
-
 
 class WilloughbyEngine(engine):
     def __init__(self, current_mileage,last_service_mileage):
