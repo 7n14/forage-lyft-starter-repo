@@ -1,2 +1,2 @@
-# Starter Repo
-This repo has everything you need to get started on the program, good luck!
+# Forage Lyft Repo
+Orgainzed all the code into 1 folder to keep thing easy to understand while coding additional split off each section of code into different folders for better orgainztion.
