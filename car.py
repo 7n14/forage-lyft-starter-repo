@@ -13,6 +13,6 @@ class Car(serviceable):
         self.engine = engine(warning_light_on)
         self.battery = battery(last_service,current_date)
 
-    @abstractmethod
+    
     def needs_service(self):
-        pass
+        return self.engine.needs_service() or self.battery.needs_service()

@@ -12,5 +12,5 @@ class nubbin_battery (battery):
         self.current_date = current_date
 
     def needs_service(self):
-        return datetime.timedelta(last_service_date,current_date)>=datetime.date.year(4)
+        return datetime.timedelta(self.last_service_date,self.current_date)>=datetime.date.year(4)
     
