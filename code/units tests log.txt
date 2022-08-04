@@ -1,0 +1,18 @@
+--Round 1 of Testing--
+After fixing a few errors regarding wrong names of variables the test was able to run.
+On run all test failed due to "TypeError: 'module' object is not callable".
+Unsure what went wrong but i will try to fix it.
+
+-Results-
+Ran 19 tests in 0.005s
+FAILED (errors=19)
+
+
+--Round 2 of Testing--
+Fixed the error from before but new errors were produced and lots of variation among the 19 tests.
+Some erroers are about "TypeError: descriptor '__init__' requires a 'super' object but received a 'CapuletEngine" 
+and others "TypeError: Car.__init__() takes 6 positional arguments but 7 were given".
+
+-Results-
+Ran 19 tests in 0.052s
+FAILED (errors=19)
