@@ -16,3 +16,33 @@ and others "TypeError: Car.__init__() takes 6 positional arguments but 7 were gi
 -Results-
 Ran 19 tests in 0.052s
 FAILED (errors=19)
+
+
+--Round 3 of Testing--
+Attept to fix errors with car factory failed. All of the other errosrs untouched.
+
+-Results-
+Ran 19 tests in 0.010s
+FAILED (errors=19)
+
+
+--Round 4 of Testing--
+Attept to fixing all errors encountered and failed in fixing all .
+Errors changed but to similar error message as before so little progress.
+
+-Results-
+Ran 19 tests in 0.010s
+FAILED (errors=19)
+
+
+--Round 5 of Testing--
+Small debugs to everything but all failed to fix errors and only produced different errors of same nature.
+A rewrite of code might be required due to bugs not being fixed easily and their might a flaw in the programs design.
+Once rewrite is complete back to Testing
+
+-Results-
+Ran 19 tests in 0.014s
+FAILED (errors=19)
+
+
+--

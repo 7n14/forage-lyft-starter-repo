@@ -141,7 +141,9 @@ class test_factory (unittest.TestCase):
         current_mileage = 60000
         last_service_mileage = 0
 
-        test_car = CarFactory.create_calliope(current_date,last_service,current_mileage,last_service_mileage)
+        car_factory = CarFactory.CarFactory()
+
+        test_car = car_factory.create_calliope(current_date,last_service,current_mileage,last_service_mileage)
         test_car2 = car.Car(engine,battery,current_date,last_service,current_mileage,last_service_mileage)
 
         self.assertEqual(test_car,test_car2)
@@ -155,8 +157,10 @@ class test_factory (unittest.TestCase):
         last_service = current_date.replace(year=current_date.year - 3)
         current_mileage = 60000
         last_service_mileage = 0
+        
+        car_factory = CarFactory.CarFactory()
 
-        test_car = CarFactory.create_lissade(current_date,last_service,current_mileage,last_service_mileage)
+        test_car = car_factory.create_lissade(current_date,last_service,current_mileage,last_service_mileage)
         test_car2 = car.Car(engine,battery,current_date,last_service,current_mileage,last_service_mileage)
 
         self.assertEqual(test_car,test_car2)
@@ -169,8 +173,10 @@ class test_factory (unittest.TestCase):
         current_date = datetime.today().date()
         last_service = current_date.replace(year=current_date.year - 3)
         warning_light_is_on = False
+        
+        car_factory = CarFactory.CarFactory()
 
-        test_car = CarFactory.create_palindrome(current_date,last_service,warning_light_is_on)
+        test_car = car_factory.create_palindrome(current_date,last_service,warning_light_is_on)
         test_car2 = car.Car(engine,battery,current_date,last_service,warning_light_is_on)
 
         self.assertEqual(test_car,test_car2)
@@ -183,8 +189,10 @@ class test_factory (unittest.TestCase):
         last_service = current_date.replace(year=current_date.year - 3)
         current_mileage = 60000
         last_service_mileage = 0
+        
+        car_factory = CarFactory.CarFactory()
 
-        test_car = CarFactory.create_rorschach(current_date,last_service,current_mileage,last_service_mileage)
+        test_car = car_factory.create_rorschach(current_date,last_service,current_mileage,last_service_mileage)
         test_car2 = car.Car(engine,battery,current_date,last_service,current_mileage,last_service_mileage)
 
         self.assertEqual(test_car,test_car2)
@@ -197,8 +205,10 @@ class test_factory (unittest.TestCase):
         last_service = current_date.replace(year=current_date.year - 3)
         current_mileage = 60000
         last_service_mileage = 0
+        
+        car_factory = CarFactory.CarFactory()
 
-        test_car = CarFactory.create_thovex(current_date,last_service,current_mileage,last_service_mileage)
+        test_car = car_factory.create_thovex(current_date,last_service,current_mileage,last_service_mileage)
         test_car2 = car.Car(engine,battery,current_date,last_service,current_mileage,last_service_mileage)
 
         self.assertEqual(test_car,test_car2)
