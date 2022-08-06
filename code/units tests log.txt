@@ -45,4 +45,12 @@ Ran 19 tests in 0.014s
 FAILED (errors=19)
 
 
---
+--Round 6 of Testing--
+This set of tests is after doing a big rewrite of code across the entire codebase.
+Across all of test with any engine other that the sternman engine i think this due to mutiple __init__ and not the code not reconising the different number of parameters
+But some test have succesed with the . being passes "EEEEEEEEFEE......EE"
+
+-Results-
+Ran 19 tests in 0.008s
+FAILED (failures=1, errors=12)
+6 successes
