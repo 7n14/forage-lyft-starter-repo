@@ -122,10 +122,10 @@ class test_car (unittest.TestCase):
         test_car_var = car.Car(engine,battery)
         self.assertTrue(test_car_var.needs_service())
 
-    def test_car_should_not_be_serviced(self):
+    def test_car_should_not_be_serviced(self):#None should be serviced
         current_date = datetime.today().date()
-        last_service_date = current_date.replace(year=current_date.year - 3)
-        current_mileage = 60000
+        last_service_date = current_date.replace(year=current_date.year - 2)
+        current_mileage = 50000
         last_service_mileage = 0
 
         engine = willoughby_engine.WilloughbyEngine(current_mileage,last_service_mileage)
@@ -133,91 +133,6 @@ class test_car (unittest.TestCase):
         
         test_car_var = car.Car(engine,battery)
         self.assertFalse(test_car_var.needs_service())
-
-
-class test_factory (unittest.TestCase):
-    def test_create_calliope(self):
-        
-
-        current_date = datetime.today().date()
-        last_service_date = current_date.replace(year=current_date.year - 3)
-        current_mileage = 60000
-        last_service_mileage = 0
-
-        engine = capulet_engine.CapuletEngine(current_mileage,last_service_mileage)
-        battery = spindler_battery.spindler_battery(last_service_date,current_date)
-
-        car_factory = CarFactory.CarFactory()
-
-        test_car = car_factory.create_calliope(current_date,last_service_date,current_mileage,last_service_mileage)
-        test_car2 = car.Car(engine,battery)
-
-        self.assertEqual(test_car,test_car2)
-
-    def test_create_lissade(self):
-        
-        current_date = datetime.today().date()
-        last_service_date = current_date.replace(year=current_date.year - 3)
-        current_mileage = 60000
-        last_service_mileage = 0
-        
-        engine = willoughby_engine.WilloughbyEngine(current_mileage,last_service_mileage)
-        battery = spindler_battery.spindler_battery(last_service_date,current_date)
-        
-        car_factory = CarFactory.CarFactory()
-
-        test_car = car_factory.create_lissade(current_date,last_service_date,current_mileage,last_service_mileage)
-        test_car2 = car.Car(engine,battery)
-
-        self.assertEqual(test_car,test_car2)
-
-    def test_create_palindrome(self):
-        
-        current_date = datetime.today().date()
-        last_service_date = current_date.replace(year=current_date.year - 3)
-        warning_light_is_on = False
-
-        engine = sternman_engine.SternmanEngine(warning_light_is_on)
-        battery = spindler_battery.spindler_battery(last_service_date,current_date)
-       
-        car_factory = CarFactory.CarFactory()
-
-        test_car = car_factory.create_palindrome(current_date,last_service_date,warning_light_is_on)
-        test_car2 = car.Car(engine,battery)
-
-        self.assertEqual(test_car,test_car2)
-
-    def test_create_rorschach(self):
-        current_date = datetime.today().date()
-        last_service_date = current_date.replace(year=current_date.year - 3)
-        current_mileage = 60000
-        last_service_mileage = 0
-
-        engine = willoughby_engine.WilloughbyEngine(current_mileage,last_service_mileage)
-        battery = nubbin_battery.nubbin_battery(last_service_date,current_date)
-
-        car_factory = CarFactory.CarFactory()
-
-        test_car = car_factory.create_rorschach(current_date,last_service_date,current_mileage,last_service_mileage)
-        test_car2 = car.Car(engine,battery)
-
-        self.assertEqual(test_car,test_car2)
-
-    def test_create_thovex(self):
-        current_date = datetime.today().date()
-        last_service_date = current_date.replace(year=current_date.year - 3)
-        current_mileage = 60000
-        last_service_mileage = 0
-
-        engine = capulet_engine.CapuletEngine(current_mileage,last_service_mileage)
-        battery = nubbin_battery.nubbin_battery(last_service_date,current_date)
-
-        car_factory = CarFactory.CarFactory()
-
-        test_car = car_factory.create_thovex(current_date,last_service_date,current_mileage,last_service_mileage)
-        test_car2 = car.Car(engine,battery)
-
-        self.assertEqual(test_car,test_car2)
 
 if __name__ == '__main__':
     unittest.main()

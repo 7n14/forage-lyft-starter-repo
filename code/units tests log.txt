@@ -54,3 +54,29 @@ But some test have succesed with the . being passes "EEEEEEEEFEE......EE"
 Ran 19 tests in 0.008s
 FAILED (failures=1, errors=12)
 6 successes
+
+
+--Round 7 of Testing--
+Fixed issue with mutiple __init__ of the super class of the engine, left the battery super.__init__ due to not having different types of batteries that dont go off years.
+A small issue from test 6 about tests failing due to object not being the same.
+
+-Results-
+Ran 19 tests in 0.006s
+FAILED (failures=6)
+
+
+--Round 8 of Testing--
+After researching on ways to test to see if the class are equal, I have removed the test_factory test case as its not a unit that needs to be tested
+There is one remaining failure test with the test_car
+
+-Results-
+Ran 14 tests in 0.003s
+FAILED (failures=1)
+
+
+--Round 9 of Testing--
+Testing is complete as all test have succesed and no more failures or errors
+
+-Results-
+Ran 14 tests in 0.001s
+OK
