@@ -1,10 +1,12 @@
+from hashlib import new
 import unittest
 from datetime import datetime
 
 from battery import nubbin_battery, spindler_battery
 from engine import capulet_engine, willoughby_engine, sternman_engine
+from tires import carrigan_tires, octoprime_tires
 import car
-import CarFactory
+
 
 
 class test_nubbin(unittest.TestCase):
@@ -26,7 +28,7 @@ class test_nubbin(unittest.TestCase):
 class test_spindler(unittest.TestCase):
     def test_battery_should_be_serviced(self):
         today = datetime.today().date()
-        last_service_date = today.replace(year=today.year - 3)
+        last_service_date = today.replace(year=today.year - 4)
 
         test_battery = spindler_battery.spindler_battery(last_service_date,today)
         self.assertTrue(test_battery.needs_service())
@@ -91,11 +93,11 @@ class test_car (unittest.TestCase):
         last_service_date = current_date.replace(year=current_date.year - 3)
         current_mileage = 60001
         last_service_mileage = 0
-
+        new_tires = carrigan_tires.carrigan_tires(0.87,0.82,0.89,0.79)
         engine = willoughby_engine.WilloughbyEngine(current_mileage,last_service_mileage)
         battery = spindler_battery.spindler_battery(last_service_date,current_date)
         
-        test_car_var = car.Car(engine,battery)
+        test_car_var = car.Car(engine,battery,new_tires)
         self.assertTrue(test_car_var.needs_service())
 
     def test_car_should_be_serviced_2(self):#if service battery not engne
@@ -103,23 +105,35 @@ class test_car (unittest.TestCase):
         last_service_date = current_date.replace(year=current_date.year - 5)
         current_mileage = 60000
         last_service_mileage = 0
-        
+        new_tires = carrigan_tires.carrigan_tires(0.87,0.82,0.89,0.79)
         engine = willoughby_engine.WilloughbyEngine(current_mileage,last_service_mileage)
         battery = spindler_battery.spindler_battery(last_service_date,current_date)
         
-        test_car_var = car.Car(engine,battery)
+        test_car_var = car.Car(engine,battery,new_tires)
         self.assertTrue(test_car_var.needs_service())
 
-    def test_car_should_be_serviced_3(self):#service both
+    def test_car_should_be_serviced_3(self):#service all
         current_date = datetime.today().date()
         last_service_date = current_date.replace(year=current_date.year - 5)
         current_mileage = 60001
         last_service_mileage = 0
-        
+        new_tires = carrigan_tires.carrigan_tires(0.92,0.89,0.91,0.86)
         engine = willoughby_engine.WilloughbyEngine(current_mileage,last_service_mileage)
         battery = spindler_battery.spindler_battery(last_service_date,current_date)
         
-        test_car_var = car.Car(engine,battery)
+        test_car_var = car.Car(engine,battery,new_tires)
+        self.assertTrue(test_car_var.needs_service())
+
+    def test_car_should_be_serviced_4(self):#service only tires
+        current_date = datetime.today().date()
+        last_service_date = current_date.replace(year=current_date.year - 2)
+        current_mileage = 50000
+        last_service_mileage = 0
+        new_tires = carrigan_tires.carrigan_tires(0.92,0.89,0.91,0.86)
+        engine = willoughby_engine.WilloughbyEngine(current_mileage,last_service_mileage)
+        battery = spindler_battery.spindler_battery(last_service_date,current_date)
+        
+        test_car_var = car.Car(engine,battery,new_tires)
         self.assertTrue(test_car_var.needs_service())
 
     def test_car_should_not_be_serviced(self):#None should be serviced
@@ -127,12 +141,31 @@ class test_car (unittest.TestCase):
         last_service_date = current_date.replace(year=current_date.year - 2)
         current_mileage = 50000
         last_service_mileage = 0
-
+        new_tires = carrigan_tires.carrigan_tires(0.87,0.82,0.89,0.79)
         engine = willoughby_engine.WilloughbyEngine(current_mileage,last_service_mileage)
         battery = spindler_battery.spindler_battery(last_service_date,current_date)
         
-        test_car_var = car.Car(engine,battery)
+        test_car_var = car.Car(engine,battery,new_tires)
         self.assertFalse(test_car_var.needs_service())
+
+
+class test_carrigan (unittest.TestCase):
+    def test_tires_should_be_serviced(self):
+        new_tires = carrigan_tires.carrigan_tires(0.92,0.89,0.91,0.86)
+        self.assertTrue(new_tires.needs_service())
+
+    def test_tires_should_not_be_serviced(self):
+        new_tires = carrigan_tires.carrigan_tires(0.87,0.82,0.89,0.79)
+        self.assertFalse(new_tires.needs_service())
+
+class test_octoprime (unittest.TestCase):
+    def test_tires_should_be_serviced(self):
+        new_tires = octoprime_tires.octoprime_tires(0.91,0.82,0.93,0.84)
+        self.assertTrue(new_tires.needs_service())
+
+    def test_tires_should_not_be_serviced(self):
+        new_tires = octoprime_tires.octoprime_tires(0.56,0.57,0.58,0.59)
+        self.assertFalse(new_tires.needs_service())
 
 if __name__ == '__main__':
     unittest.main()

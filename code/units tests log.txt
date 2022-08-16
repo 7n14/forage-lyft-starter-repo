@@ -80,3 +80,30 @@ Testing is complete as all test have succesed and no more failures or errors
 -Results-
 Ran 14 tests in 0.001s
 OK
+
+#Tests after new criteria 
+--Round 10 of Testing--
+Didn't run due to error
+
+-Results-
+Ran 0 tests
+Error
+
+
+--Round 11 of Testing--
+Same error occured across all of the tire tests
+Additionally an error in a battery test popped up 
+
+-Results-
+Ran 19 tests in 0.006s
+FAILED (failures=1, errors=6)
+
+
+--Round 12 of Testing--
+All error have been fixed
+Battery error was from upgrade of tire meaning in the test data was out of date.
+The tires was from poor understanding of the for loops writen
+
+-Results-
+Ran 19 tests in 0.002s
+OK
